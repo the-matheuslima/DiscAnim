@@ -1,0 +1,40 @@
+.app__nav {
+    background-color: var(--color-primary);
+    backdrop-filter: blur(30px);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .app__nav-form {
+        input {
+            height: 42px;
+            // width: 400px;
+            font-size: 1.1rem;
+            padding: 10px;
+            outline: none;
+        }
+
+        button {
+            height: 43px;
+            // width: 80px;
+
+            &:hover {
+                background-color: aqua;
+            }
+        }
+    }
+}
+a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        color: #dbdada;
+    }
+}
