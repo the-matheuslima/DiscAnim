@@ -6,7 +6,7 @@ import '@splidejs/react-splide/css';
 import './Manga.scss'
 
 import axios from "axios";
-import List from "../List/List";
+import List from "../List";
 
 
 function Manga() {

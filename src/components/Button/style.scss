@@ -1,0 +1,8 @@
+.app__button {
+    padding: 10px 15px;
+    background-color: transparent;
+    color: var(--color-text);
+    border-top: 2px dashed var(--color-primary);
+    border-left: 2px dashed var(--color-primary);
+    cursor: pointer;
+}
