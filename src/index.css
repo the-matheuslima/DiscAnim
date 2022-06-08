@@ -14,6 +14,16 @@
   --color-text: #313E40;
 }
 
+:root {
+  --color-bg: #122438;
+  --color-primary: #0B1622;
+  --color-secondary: #020508;
+  --color-tercery: #fff;
+  --color-text: #fff;
+  --color-border: #d3d0d0;
+}
+
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);

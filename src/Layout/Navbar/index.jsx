@@ -20,7 +20,7 @@ function Navbar() {
         <input type="text" value={search} onChange={handleSearch} placeholder='search anime' />
 
         <Link to={`/${search}`}>
-          <Button text={'ver'} />
+          <button>search</button>
         </Link>
       </form>
     </nav>

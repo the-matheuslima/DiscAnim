@@ -1,74 +1,74 @@
 .app__header {
-    text-align: center;
-    position: relative;
-    padding-top: 1.5rem;
+  text-align: center;
+  padding-top: 1.5rem;
 
-    h2 {
-        text-align: start;
-    }
+  h2 {
+    text-align: start;
+  }
 
-    .app__header-items {
+  .app__header-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+
+    .app__header-item {
+      list-style: none;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 185px;
+        height: 273px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .app__header-title {
+        transform: translateY(100%);
+        visibility: hidden;
+        transition: all 0.5s ease-in-out;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        color: black;
+        backdrop-filter: blur(6px);
+        width: 100%;
+        height: 100%;
         display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
         align-items: center;
         justify-content: center;
-        padding-bottom: 1rem;
+        text-align: center;
 
-        .app__header-item {
-            list-style: none;
-            position: relative;
-            overflow: hidden;
-
-            img {
-                width: 225px;
-                height: 313px;
-                object-fit: cover;
-            }
-
-            .app__header-title {
-                transform: translateY(100%);
-                visibility: hidden;
-                transition: all 0.5s ease-in-out;
-                overflow: hidden;
-                position: absolute;
-                top: 0;
-                color: black;
-                backdrop-filter: blur(6px);
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-
-                h2 {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 1rem;
-                    color: black;
-                    text-align: center;
-                }
-            }
-
-            &:hover {
-                .app__header-title {
-                    transform: translateX(0);
-                    visibility: visible;
-                }
-            }
+        h2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1rem;
+          color: black;
+          text-align: center;
         }
-    }
+      }
 
-    .app__header-movie-btns {
-        padding: 1rem;
-
-        button {
-            cursor: pointer;
+      &:hover {
+        .app__header-title {
+          transform: translateX(0);
+          visibility: visible;
         }
+      }
     }
+  }
+
+  .app__header-movie-btns {
+    padding: 1rem;
+
+    button {
+      cursor: pointer;
+    }
+  }
 }
 h2 {
-    font-size: 1rem;
+  font-size: 1rem;
 }

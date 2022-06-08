@@ -1,35 +1,47 @@
 .app__nav {
-    background-color: var(--color-primary);
-    backdrop-filter: blur(30px);
-    width: 100%;
+  background-color: var(--color-primary);
+  backdrop-filter: blur(30px);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+
+  .logo {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: #dbdada;
+    }
+  }
+
+  .app__nav-form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
-    height: 20vh;
+    gap: 10px;
+    width: 40%;
 
-    .logo {
-        font-size: 2rem;
-        color: white;
-        text-decoration: none;
-
-        &:hover {
-            color: #dbdada;
-        }
+    input {
+      height: 25px;
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px;
+      outline: none;
+      border-radius: 5px;
     }
-
-    .app__nav-form {
-        display: flex;
-        align-items: center;
-        input {
-            height: 25px;
-            font-size: 1rem;
-            padding: 10px;
-            outline: none;
-            border-radius: 5px;
-        }
-        input::placeholder {
-            opacity: 0.3;
-        }
+    input::placeholder {
+      opacity: 0.3;
     }
+    button {
+      background-color: unset;
+      color: var(--color-text);
+
+      &:hover {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
 }
