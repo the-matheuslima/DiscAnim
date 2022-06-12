@@ -1,10 +1,11 @@
 import React from "react";
-import './style.scss'
+// import "./style.scss";
+import { Loading, LoadingDiv } from "./style";
 
 function index() {
-    return (
-        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-    );
+  return (
+    <Loading><LoadingDiv></LoadingDiv><LoadingDiv></LoadingDiv><LoadingDiv></LoadingDiv><LoadingDiv></LoadingDiv></Loading>
+  );
 }
 
 export default index;

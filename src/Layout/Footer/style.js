@@ -1,4 +1,6 @@
-.app__footer {
+import styled from "styled-components";
+
+export const FooterContent = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,15 +9,16 @@
   height: 80px;
   background-color: var(--color-primary);
   margin-top: 2rem;
-  // position: absolute;
-  // bottom: 0;
   width: 100%;
   color: var(--color-tercery);
   position: fixed;
   position: inherit;
   bottom: 0;
+`;
 
-  a {
-    color: var(--color-secondary);
+export const CodedBy = styled.p`
+  .author{
+    text-decoration: solid;
+    color: var(--color-text);
   }
-}
+`;

@@ -1,30 +1,33 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import Button from '../../components/Button/index';
-import './style.scss'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { NavContent, Logo, Form, Input, Button } from "./styled";
 
-
-function Navbar() {
-  const [search, setSearch] = useState('');
+function index() {
+  const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
-    setSearch(e.target.value)
-  }
+    setSearch(e.target.value);
+  };
 
   return (
-    <nav className='app__nav app__container'>
+    <NavContent>
+      <Link to="/">
+        <Logo>DiscAnim</Logo>
+      </Link>
 
-      <Link to="/"><h2 className='logo'>DiscAnim</h2></Link>
-
-      <form className='app__nav-form'>
-        <input type="text" value={search} onChange={handleSearch} placeholder='search anime' />
+      <Form>
+        <Input
+          type="text" value={search} onChange={handleSearch} placeholder='search anime'
+        />
 
         <Link to={`/${search}`}>
-          <button>search</button>
+          <Button onClick={handleSearch}>
+            search
+          </Button>
         </Link>
-      </form>
-    </nav>
-  )
+      </Form>
+    </NavContent>
+  );
 }
 
-export default Navbar
+export default index;

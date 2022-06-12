@@ -1,10 +1,9 @@
 import React from "react";
-import Header from '../../Layout/Header'
+import Header from "../../Layout/Header";
 import Season_Later from "../../Layout/Season_Later";
 import Action from "../../Layout/Action";
 
-
-function Home() {
+function index() {
   return (
     <>
       <Header />
@@ -14,4 +13,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default index;

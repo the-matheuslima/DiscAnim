@@ -1,45 +1,42 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Button from '../../components/Button/index'
-import './style.scss'
-import { Link } from "react-router-dom";
 import AppContext from "../../AppContext/Context";
+import Button from "../../components/Button/index";
+import { ListItems, HeaderContent, ListItem, ListItemPoster, ListItemNameAnime, ListItemHiddenAnime } from "./style";
 
-function Header() {
-  const [trending, setTrending] = useState([])
-  const { setDetails } = useContext(AppContext)
+function index() {
+  const [trending, setTrending] = useState([]);
+  const { setDetails } = useContext(AppContext);
 
   useEffect(() => {
-    axios.get(`https://api.jikan.moe/v3/top/anime`)
+    axios.get("https://api.jikan.moe/v3/top/anime")
       .then(resp => {
-        setTrending(resp.data.top)
-      })
-  }, [])
+        setTrending(resp.data.top);
+      });
+  }, []);
 
   return (
-    <header className="app__header">
-      < ul className="app__header-items">
-        {trending.slice(0, 11).map(anime => {
-          return (
-            <li className="app__header-item" key={anime.mal_id}>
-              <img src={anime.image_url} alt="" />
-              <div className="app__header-title">
-                <Link to={`/detalins/${anime.mal_id}`}
-                >
-                  <h2>{anime.title}</h2>
-                </Link>
-              </div>
-            </li>
-          )
-        })}
-      </ul>
-      <Link to={`/detalins/`} onClick={() => setDetails(trending)}>
-
-        <Button text={'ver mais'} />
+    <HeaderContent>
+      <ListItems>
+        {trending.slice(0, 11).map(anime => (
+          <ListItem key={anime.mal_id}>
+            <ListItemPoster src={anime.image_url} alt={anime.title} />
+            <ListItemHiddenAnime>
+              <Link to={`/detalins/${anime.mal_id}`}>
+                <ListItemNameAnime>{anime.title}</ListItemNameAnime>
+              </Link>
+            </ListItemHiddenAnime>
+          </ListItem>
+        )
+        )}
+      </ListItems>
+      <Link to={"/detalins/"} onClick={() => setDetails(trending)}>
+        <Button text={"ver mais"} />
       </Link>
-    </header >
-  )
+    </HeaderContent >
+  );
 }
 
-export default Header;
+export default index;

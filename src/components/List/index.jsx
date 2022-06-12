@@ -1,27 +1,33 @@
 import React from "react";
-import { Splide, SplideSlide } from '@splidejs/react-splide'
-import '@splidejs/react-splide/css';
-import './style.scss'
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+
+import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
+import { ListConteiner, ListItemsPoster, ListItemHiddenAnime, ListItemNameAnime } from "./style";
 
-function List({ optionSlide, state }) {
-    return (
-        <Splide options={optionSlide}> {
-            state.map(movies => (
-                <SplideSlide key={movies.mal_id} >
-                    <div className="app__list-item">
-                        <img src={movies.image_url} alt={"movie " + movies.title} />
-                        <div className="app__list-title">
-                            <Link to={`/detalins/${movies.mal_id}`}>
-                                <p>{movies.title}</p></Link>
-                        </div>
-                    </div>
-                </SplideSlide>
-            ))
+function index({ optionSlide, state }) {
+  return (
+    <Splide options={optionSlide}> {
+      state.map(movies => (
+        <SplideSlide key={movies.mal_id}>
+          <ListConteiner>
+            <ListItemsPoster
+              src={movies.image_url}
+              alt={"movie " + movies.title}
+            />
+            <ListItemHiddenAnime>
+              <Link to={`/detalins/${movies.mal_id}`}>
+                <ListItemNameAnime>
+                  {movies.title}
+                </ListItemNameAnime></Link>
+            </ListItemHiddenAnime>
+          </ListConteiner>
+        </SplideSlide>
+      ))
 
-        }
-        </Splide >
-    )
+    }
+    </Splide >
+  );
 }
 
-export default List;
+export default index;

@@ -1,12 +1,13 @@
 import React from "react";
-import './style.scss'
+// import "./style.scss";
+import { FooterContent, CodedBy } from "./style";
 
-function Footer() {
-    return (
-        <div className="app__footer">
-            <p>Coded by <a href="https://github.com/the-matheuslima" target="_blank">Matheus Lima</a>.</p>
-        </div>
-    )
+function index() {
+  return (
+    <FooterContent>
+      <CodedBy>Coded by <a target="__blank" rel="author" href="https://github.com/the-matheuslima" className="author">Matheus Lima</a>.</CodedBy>
+    </FooterContent>
+  );
 }
 
-export default Footer;
+export default index;

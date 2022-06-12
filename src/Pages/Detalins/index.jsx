@@ -1,34 +1,34 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
+
 import { Link } from "react-router-dom";
 import AppContext from "../../AppContext/Context";
-import './style.scss'
+
+import { AppContainer } from "../../globalStyles";
+import { ListItems, ListItem, ListItemHidden, NameAnime } from "./style";
+import Poster from "../../components/Poster";
 
 function index() {
-    const { category } = useContext(AppContext)
+  const { category } = useContext(AppContext);
 
-    useEffect(() => {
-        console.log(category)
-    }, [category])
-
-    return (
-        <div className="app__details  app__container">
-            < ul className="app__details-items">
-                {category.details.category.map(anime => {
-                    return (
-                        <li className="app__details-item" key={anime.mal_id}>
-                            <img src={anime.image_url} alt="" />
-                            <div className="app__header-title">
-                                <Link to={`/detalins/${anime.mal_id}`}
-                                >
-                                    <h2>{anime.title}</h2>
-                                </Link>
-                            </div>
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
-    );
+  return (
+    <AppContainer>
+      <ListItems>
+        {category.details.category.map(anime => (
+          <ListItem key={anime.mal_id}>
+            <Poster poster={anime.image_url} alt={anime.title} />
+            <ListItemHidden>
+              <Link to={`/detalins/${anime.mal_id}`}>
+                <NameAnime>
+                  {anime.title}
+                </NameAnime>
+              </Link>
+            </ListItemHidden>
+          </ListItem>
+        )
+        )}
+      </ListItems>
+    </AppContainer>
+  );
 }
 
 export default index;
