@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const ListConteiner = styled.div`
   position: absolute;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 1rem;
 `;
 
 export const ListItemsPoster = styled.img`
