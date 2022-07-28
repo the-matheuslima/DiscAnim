@@ -8,13 +8,6 @@ const GlobalStyle = createGlobalStyle`
   border: none;
   text-decoration: none;
 }
-:root {
-  --color-bg: #EBF0F2;
-  --color-primary: #5C6F73;
-  --color-secondary: #8FA1A6;
-  --color-tercery: #D9D9D9;
-  --color-text: #313E40;
-}
 
 :root {
   --color-bg: #122438;
@@ -47,16 +40,19 @@ export const AppContainer = styled.section`
 
 export const PosterContent = styled.div`
     border-radius: 5px;
-    width: 205px;
-    height: 293px;
 `;
 export const PosterImg = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
     border-radius: 5px;
 `;
 
-
+export const AnimeMore = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export default GlobalStyle;

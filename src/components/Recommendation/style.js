@@ -22,6 +22,7 @@ export const ListItem = styled.li`
      list-style: none;
      width: 120px;
      height: 180px;
+     cursor: pointer;
      border-radius: 5px;
 
      &:hover {

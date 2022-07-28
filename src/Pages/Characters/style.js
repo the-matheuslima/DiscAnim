@@ -12,11 +12,19 @@ export const ListItem = styled.li`
     list-style: none;
     position: relative;
     overflow: hidden;
-    `;
-
-export const ListItemImages = styled.img`
+    border-radius: 5px;
     width: 225px;
     height: 313px;
+
+    @media (max-width: 870px) {
+      width: 175px;
+      height: 263px;
+    }
+`;
+
+export const ListItemImages = styled.img`
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 `;
 
@@ -46,7 +54,7 @@ export const NameCharacter = styled.h2`
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-    color: white;
+    color: black;
     text-align: center;
     cursor: pointer;
 `;

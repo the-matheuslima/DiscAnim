@@ -14,6 +14,11 @@ export const ListItem = styled.li`
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: 870px) {
+      width: 175px;
+      height: 263px;
+    }
 `;
 
 export const ListItemPoster = styled.img`
