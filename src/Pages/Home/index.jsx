@@ -1,16 +1,16 @@
 import React from "react";
-import Header from "../../Layout/Header";
-import Season_Later from "../../Layout/Season_Later";
-import Action from "../../Layout/Action";
+import Header from "../../components/header";
+import UpcomingList from "../../components/upcoming-list";
+import ActionList from "../../components/action-list";
 
-function index() {
+function Home() {
   return (
     <>
       <Header />
-      <Season_Later />
-      <Action />
+      <UpcomingList />
+      <ActionList />
     </>
   );
 }
 
-export default index;
+export default Home;

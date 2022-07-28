@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useParams, } from "react-router-dom";
 
 import { AppContainer } from "../../globalStyles";
-import { AsideLeft, Flex, AsideRight } from "./style";
+import * as C from "./style"
 
 import axios from "axios";
-import Loading from "../../components/Loading/index";
-import Recommendation from "../../components/Recommendation/index";
-import Characters from "./Characters/index";
-import InfoHeader from "./InfoHeader/index";
-import AnimeInfo from "./AnimeInfo/index";
-import Poster from "../../components/Poster/index";
+import Loading from "../../components/loading";
+import Recommendation from "../../components/recommendation";
+import Characters from "./characters-anime";
+import InfoHeader from "./info-header";
+import AnimeInfo from "./anime-info";
+import Poster from "../../components/poster";
 
-function index() {
+function MoreInfo() {
   const { id } = useParams();
   const [desc, setDesc] = useState(null);
   const [characters, setCharacters] = useState(null);
@@ -40,8 +40,8 @@ function index() {
       <AppContainer>
         {desc && characters && recommendation ?
           <>
-            <Flex>
-              <AsideLeft>
+            <C.Flex>
+              <C.AsideLeft>
                 <Poster
                   poster={desc.images.jpg.image_url}
                   alt={desc.title}
@@ -58,9 +58,9 @@ function index() {
                   from={desc.aired.from}
                   to={desc.aired.to}
                 />
-              </AsideLeft>
+              </C.AsideLeft>
 
-              <AsideRight>
+              <C.AsideRight>
                 <InfoHeader
                   rank={desc.rank}
                   rating={desc.rating}
@@ -71,8 +71,8 @@ function index() {
                   characters={characters}
                   id={id}
                 />
-              </AsideRight>
-            </Flex>
+              </C.AsideRight>
+            </C.Flex>
             {recommendation ?
               <Recommendation recommendation={recommendation} />
               : null}
@@ -83,4 +83,4 @@ function index() {
   );
 }
 
-export default index;
+export default MoreInfo;

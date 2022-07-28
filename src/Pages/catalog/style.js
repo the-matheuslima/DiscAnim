@@ -16,12 +16,6 @@ export const ListItem = styled.li`
     overflow: hidden;
 `;
 
-// export const ListItemImages = styled.img`
-//     width: 205px;
-//     height: 293px;
-//     object-fit: cover;
-// `;
-
 export const ListItemHidden = styled.div`
     transform: translateY(100%);
     visibility: hidden;

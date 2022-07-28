@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import Loading from "../../components/Loading/index";
+import Loading from "../../components/loading/index";
 import axios from "axios";
 import { AppContainer } from "../../globalStyles";
 import { ListItems, ListItem, ListItemImages, ListItemHidden, NameCharacter } from "./style";
 
-function index() {
+import * as C from "./style";
+
+function Catalog() {
   const { id } = useParams();
   const [characters, setCharacters] = useState(null);
 
@@ -18,29 +20,29 @@ function index() {
   return (
     <main>
       <AppContainer>
-        <ListItems>
+        <C.ListItems>
           {characters ?
             <>
               {
                 characters.map(({ character }) => (
-                  <ListItem key={character.id}>
-                    <ListItemImages src={character.images.jpg.image_url} alt={`character ${character.name}`} />
-                    <ListItemHidden >
+                  <C.ListItem key={character.id}>
+                    <C.ListItemImages src={character.images.jpg.image_url} alt={`character ${character.name}`} />
+                    <C.ListItemHidden >
                       <a target="_blank" rel="noreferrer" href={character.url} >
-                        <NameCharacter>
+                        <C.NameCharacter>
                           {character.name}
-                        </NameCharacter>
+                        </C.NameCharacter>
                       </a>
-                    </ListItemHidden>
-                  </ListItem>
+                    </C.ListItemHidden>
+                  </C.ListItem>
                 ))
               }
             </>
             : <Loading />}
-        </ListItems>
+        </C.ListItems>
       </AppContainer>
     </main>
   );
 }
 
-export default index;
+export default Catalog;
