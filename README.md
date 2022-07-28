@@ -18,7 +18,7 @@
  Esta é uma aplicação ReactJS que lista diversos animes. O usuário pode buscar por animes, ver as informações do anime e ver os personagens.
 </blockquote>
 
-<p align="center">Acesse o projeto clicando <a href="https://app-anime-578b4viyz-the-matheuslima.vercel.app/" target="_blank"> aqui </a>.</p>
+<p align="center">Acesse o projeto clicando <a href="https://app-anime-the-matheuslima.vercel.app/" target="_blank"> aqui </a>.</p>
 
 <h2>🚀Tecnologias</h2/>
 <p>As seguintes ferramentas foram usadas na construção do projeto:</p>
