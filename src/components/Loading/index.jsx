@@ -1,11 +1,10 @@
 import React from "react";
-// import "./style.scss";
-import { Loading, LoadingDiv } from "./style";
+import * as C from "./style";
 
-function index() {
+function Loading() {
   return (
-    <Loading><LoadingDiv></LoadingDiv><LoadingDiv></LoadingDiv><LoadingDiv></LoadingDiv><LoadingDiv></LoadingDiv></Loading>
+    <C.LoadingContainer><C.LoadingDiv></C.LoadingDiv><C.LoadingDiv></C.LoadingDiv><C.LoadingDiv></C.LoadingDiv><C.LoadingDiv></C.LoadingDiv></C.LoadingContainer>
   );
 }
 
-export default index;
+export default Loading;

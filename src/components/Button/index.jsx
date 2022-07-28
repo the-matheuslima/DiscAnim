@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-function index({ text }) {
+function Button({ children }) {
   return (
-    <Button className="app__button">
-      {text}
-    </Button>
+    <CButton>
+      {children}
+    </CButton>
   );
 }
 
-const Button = styled.button`
-  padding: 10px 15px;
+const CButton = styled.button`
+  padding: 5px 10px;
   background-color: transparent;
   color: var(--color-text);
   border-top: 2px dashed var(--color-border);
@@ -18,4 +18,4 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default index;
+export default Button;

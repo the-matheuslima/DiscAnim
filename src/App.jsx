@@ -1,33 +1,32 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./Pages/Home/index";
-import Detalins from "./Pages/Detalins/index";
-import DetalinsAnin from "./Pages/DetalinsAni/index";
-import Characters from "./Pages/Characters/index";
+import Home from "./pages/home/";
+import Catalog from "./pages/catalog";
+import MoreInfo from "./pages/more-info";
+import Characters from "./pages/characters/";
 
-import Navbar from "./Layout/Navbar/index";
-import Search from "./Pages/Search/index";
-import AppProvider from "./AppContext/Providers";
-import Footer from "./Layout/Footer/index";
+import Navbar from "./components/navbar";
+import Search from "./pages/Search/index";
+import Footer from "./components/footer/";
 import GlobalStyle from "./globalStyles";
 
 function App() {
   return (
-    <AppProvider>
+    <>
       <GlobalStyle />
       <Router>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:id" element={<Search />} />
-          <Route path="/detalins/" element={<Detalins />} />
-          <Route path="/detalins/:id/" forceRefresh={true} element={<DetalinsAnin />} />
-          <Route path="/detalins/:id/characters" element={<Characters />} />
+          <Route path="/catalog/" element={<Catalog />} />
+          <Route path="/catalog/:id/" element={<MoreInfo />} />
+          <Route path="/catalog/:id/characters" element={<Characters />} />
         </Routes>
         <Footer />
       </Router>
-    </AppProvider>
+    </>
   );
 }
 
