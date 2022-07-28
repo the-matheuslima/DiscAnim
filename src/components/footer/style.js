@@ -18,7 +18,16 @@ export const FooterContent = styled.footer`
 
 export const CodedBy = styled.p`
   .author{
-    text-decoration: solid;
-    color: var(--color-text);
+    text-decoration: underline;
+    color: var(--color-border);
   }
 `;
+
+export const IconFooter = styled.a`
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 2px;
+`

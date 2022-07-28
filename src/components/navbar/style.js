@@ -27,6 +27,10 @@ export const Form = styled.form`
     align-items: center;
     gap: 10px;
     width: 40%;
+
+    @media (max-width: 870px) {
+      width: 50%;
+    }
 `;
 
 export const Input = styled.input`
@@ -40,13 +44,4 @@ export const Input = styled.input`
     ::placeholder {
       opacity: 0.3;
     }
-`;
-
-export const Button = styled.button`
-   background-color: unset;
-  color: var(--color-text);
-
-  :hover {
-    background-color: var(--color-secondary);
-  }
 `;

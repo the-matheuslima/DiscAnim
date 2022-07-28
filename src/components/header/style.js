@@ -1,18 +1,38 @@
 import styled from "styled-components";
 
-export const ListConteiner = styled.div`
-  position: absolute;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 1rem;
+export const HeaderContent = styled.header`
+  text-align: center;
+  padding-top: 1.5rem;
 `;
 
-export const ListItemsPoster = styled.img`
+export const ListItems = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+`;
+
+export const ListItem = styled.li`
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+
+    width: 185px;
+    height: 273px;
+
+    @media (max-width: 750px) {
+    width: 145px;
+    height: 243px;
+  }
+`;
+
+export const ListItemPoster = styled.img`
     width: 100%;
     height: 100%;
-    border-radius: 5px;
     object-fit: cover;
+    border-radius: 5px;
 `;
 
 export const ListItemHiddenAnime = styled.div`
@@ -31,7 +51,7 @@ export const ListItemHiddenAnime = styled.div`
     justify-content: center;
     text-align: center;
 
-    ${ListConteiner}:hover &{
+    ${ListItem}:hover &{
         transform: translateY(0);
         visibility: visible;
     }
