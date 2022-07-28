@@ -23,17 +23,21 @@ function MoreInfo() {
       .then(resp => {
         setDesc(resp.data.data);
       });
+  }, [id])
 
+  useEffect(() => {
     axios.get(`https://api.jikan.moe/v4/anime/${id}/characters`)
       .then(resp => {
         setCharacters(resp.data.data.slice(0, 11));
-      });
+      })
+  }, [id])
 
+  useEffect(() => {
     axios.get(`https://api.jikan.moe/v3/anime/${id}/recommendations`)
       .then(resp => {
         setRecommendation(resp.data.recommendations.slice(0, 10));
       });
-  }, [id]);
+  }, [id])
 
   return (
     <main >

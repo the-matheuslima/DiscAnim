@@ -30,4 +30,4 @@ export const IconFooter = styled.a`
   border-radius: 5px;
   margin: 5px;
   padding: 2px;
-`
+`;
