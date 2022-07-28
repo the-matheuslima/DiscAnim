@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import axios from "axios";
-import Loading from "../../components/Loading/index";
+import Loading from "../../components/loading/";
 import { AppContainer } from "../../globalStyles";
-import { ListItems, ListItem, AnimeTitle, ListItemHidden, ListItemPoster } from "./style";
+import * as C from "./style"
 
-function index() {
+function Search() {
   const { id } = useParams();
   const [search, setSearch] = useState(null);
 
@@ -18,24 +18,24 @@ function index() {
   return (
     <AppContainer>
       {search ?
-        <ListItems >
-          {search.map(ani => {
+        <C.ListItems >
+          {search.map(anime => {
             return (
-              <ListItem key={ani.mal_id}>
-                <ListItemPoster src={ani.images.jpg.image_url} alt={ani.title} />
+              <C.ListItem key={anime.mal_id}>
+                <ListItemPoster src={anime.images.jpg.image_url} alt={anime.title} />
 
-                <ListItemHidden>
-                  <Link to={`/detalins/${ani.mal_id}`}>
-                    <AnimeTitle>{ani.title}</AnimeTitle>
+                <C.ListItemHidden>
+                  <Link to={`/catalog/${anime.mal_id}`}>
+                    <C.AnimeTitle>{anime.title}</C.AnimeTitle>
                   </Link>
-                </ListItemHidden>
-              </ListItem>
+                </C.ListItemHidden>
+              </C.ListItem>
             );
           })}
-        </ListItems>
+        </C.ListItems>
         : <Loading />}
     </AppContainer>
   );
 }
 
-export default index;
+export default Search;
