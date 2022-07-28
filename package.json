@@ -11,12 +11,11 @@
     "@splidejs/react-splide": "^0.7.5",
     "@splidejs/splide-extension-grid": "^0.4.1",
     "axios": "^0.27.2",
-    "dotenv": "^16.0.1",
     "moment": "^2.29.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "sass": "^1.52.1"
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
