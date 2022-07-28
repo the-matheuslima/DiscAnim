@@ -1,7 +1,7 @@
 import React from "react";
 import { PosterContent, PosterImg } from "../../globalStyles";
 
-function Poster({ poster, alt }) {
+function index({ poster, alt }) {
   return (
     <PosterContent>
       <PosterImg src={poster} alt={alt} />
@@ -9,4 +9,4 @@ function Poster({ poster, alt }) {
   );
 }
 
-export default Poster;
+export default index;

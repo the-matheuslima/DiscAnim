@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-export const LoadingContainer = styled.div`
+export const Loading = styled.div`
   display: flex;
   height: 71vh;
   justify-content: center;

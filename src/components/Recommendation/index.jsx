@@ -1,27 +1,26 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { RecommendationContent, ListItems, ListItem, ListItemPoster, Title } from "./style";
 
-import * as C from "./style";
-
-function Recommendation({ recommendation }) {
+function index({ recommendation }) {
   const navigate = useNavigate();
 
   function handleNavitage(id) {
-    navigate(`/catalog/${id}`);
+    navigate(`/detalins/${id}`, { replace: true });
   }
   return (
-    <C.RecommendationContent>
-      <C.Title>Recommendation</C.Title>
-      <C.ListItems>
+    <RecommendationContent>
+      <Title>Recommendation</Title>
+      <ListItems>
         {recommendation.map((anime) => (
-          <C.ListItem key={anime.mal_id} onClick={() => handleNavitage(anime.mal_id)}>
-            <C.ListItemPoster src={anime.image_url} alt={"anime " + anime.title} />
-          </C.ListItem>
+          <ListItem key={anime.mal_id} onClick={() => handleNavitage(anime.mal_id)}>
+            <ListItemPoster src={anime.image_url} alt={"anime " + anime.title} />
+          </ListItem>
         )
         )}
-      </C.ListItems>
-    </C.RecommendationContent>
+      </ListItems>
+    </RecommendationContent>
   );
 }
 
-export default Recommendation;
+export default index;
