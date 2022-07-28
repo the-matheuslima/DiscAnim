@@ -22,7 +22,7 @@ function Search() {
           {search.map(anime => {
             return (
               <C.ListItem key={anime.mal_id}>
-                <ListItemPoster src={anime.images.jpg.image_url} alt={anime.title} />
+                <C.ListItemPoster src={anime.images.jpg.image_url} alt={anime.title} />
 
                 <C.ListItemHidden>
                   <Link to={`/catalog/${anime.mal_id}`}>
